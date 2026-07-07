@@ -154,6 +154,7 @@ closePlayer.addEventListener('click', closePlayerFn);
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closePlayerFn();
+  if (e.key === 'f' || e.key === 'F') e.preventDefault();
 });
 
 videoPlayer.addEventListener('contextmenu', (e) => e.preventDefault());
