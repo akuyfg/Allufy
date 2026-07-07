@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Allufy">
+  <meta name="theme-color" content="#7c3aed">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-pwa-192.svg">
+  <title>Allufy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="logo">
+        <svg class="logo-icon" viewBox="0 0 40 40" width="40" height="40">
+          <defs>
+            <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#7c3aed"/>
+              <stop offset="100%" stop-color="#a78bfa"/>
+            </linearGradient>
+          </defs>
+          <rect x="4" y="6" width="32" height="24" rx="4" fill="none" stroke="url(#lg)" stroke-width="2.5"/>
+          <polygon points="18,12 28,18 18,24" fill="url(#lg)" opacity="0.9"/>
+          <circle cx="8" cy="10" r="1.6" fill="#7c3aed"/>
+          <circle cx="8" cy="26" r="1.6" fill="#a78bfa"/>
+        </svg>
+        <div class="logo-text">
+          <h1>Allufy</h1>
+          <span class="tagline">Movies &amp; Series</span>
+        </div>
+      </div>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="ابحث عن فيلم أو مسلسل..." />
+        <button id="searchBtn">🔍</button>
+      </div>
+    </header>
+
+    <main id="mainContent">
+      <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>جاري التحميل...</p>
+      </div>
+      <div id="content"></div>
+    </main>
+
+    <div id="playerOverlay" class="player-overlay hidden">
+      <div class="player-main">
+        <div class="player-video-col">
+          <div class="player-topbar" id="playerTopbar">
+            <button id="closePlayer" class="player-close">✕ رجوع</button>
+            <span id="playerTitle" class="player-title">Allufy</span>
+            <span id="playerQuality" class="player-quality">1080p</span>
+          </div>
+          <div class="player-video-wrap" id="playerVideoWrap">
+            <video id="videoPlayer" controls autoplay controlslist="nodownload noremoteplayback noplaybackrate" disablepictureinpicture></video>
+          </div>
+        </div>
+        <div class="player-episodes-col" id="episodesCol">
+          <div class="eps-header">الحلقات</div>
+          <div class="eps-list" id="epsList"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

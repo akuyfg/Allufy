@@ -1,0 +1,38 @@
+{
+  "name": "alluffy",
+  "version": "1.0.0",
+  "description": "Alluffy - Movies & TV Shows App",
+  "author": "Alluffy",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.alluffy.app",
+    "productName": "AlluffyApp",
+    "win": {
+      "target": "portable",
+      "icon": "icon.ico"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "package.json"
+    ]
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.4.1",
+    "@capacitor/core": "^8.4.1",
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.10",
+    "express": "^4.22.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.4.1",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.0",
+    "electron-packager": "^17.1.2"
+  }
+}
